@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            // function showTime() {
+            //     var date = new Date();
+            //     document.getElementById("time").innerHTML = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" +
+            //         date.getDate() + "日 " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            //     setTimeout(showTime,1000);
+            // }
+
+            // 练习：setTimeout 实现 显示时间
+            // showTime();
+
+            var num = 3;
+            function f() {
+                document.getElementById("time").innerText = num;
+                num--;
+                console.log(num)
+                if (num == -1){
+                    clearInterval(v)
+                }
+            }
+            var v =setInterval(f,1000)
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <h2 id="time"></h2>
+</body>
+</html>

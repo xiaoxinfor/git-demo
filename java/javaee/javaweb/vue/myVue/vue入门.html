@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>
+				姓名：{{object.name}}<br />
+				年龄：{{object.age}}<br />
+				性别：{{object.flag ? '男' : '女'}}<br />
+				电话：{{object.phone}}<br />
+			</p>
+			<input name="message" v-model="message" />{{message}}<br />
+			<input type="radio" name="sex" v-model="sex" value="男" />男
+			<input type="radio" name="sex" v-model="sex" value="女" />女
+			<br>{{sex}}<br />
+			<select v-model="yixin">
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<p>选中了{{yixin}}</p>
+		</div>
+		<!-- 创建vue对象 -->
+		<script type="text/javascript">
+			new Vue({
+				el: "#app",
+				data:{
+					message:"",
+					sex:"",
+					yixin:"",
+					object:{
+						name:"李四",
+						age:12,
+						flag:true,
+						phone:'12345697854'
+					},
+				}
+			});
+		</script>
+	</body>
+</html>

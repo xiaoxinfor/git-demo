@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            width: 868px;
+            height: 800px;
+            /*border: 1px solid;*/
+            margin: 0px auto;
+        }
+
+
+        #nav img {
+            padding-top: 23px;
+            padding-bottom: 23px;
+            padding-left: 10px;
+        }
+
+        #nav {
+            background-image: url("../img/top-bg.gif");
+            background-repeat: repeat-x;
+            height: 105px;
+            width: 868px;
+        }
+
+        #head ul li {
+            float: left;
+            list-style-type: none;
+            width: 80px;
+            text-align: center;
+            color: white;
+        }
+        #img1{
+            width: 868px;
+            height: 314px;
+
+        }
+        .clearfix{
+            clear: both;
+        }
+        #left{
+            height: 206px;
+
+            float: left;
+            width: 30%;
+
+            background-image: url("../img/main-bg.gif");
+            background-repeat: repeat-x;
+            background-size: 206px;
+        }
+        #center{
+            height: 206px;
+
+            float: left;
+            width: 37%;
+            margin-left: 14px;
+            background-image: url("../img/main-bg.gif");
+            background-repeat: repeat-x;
+            background-size: 206px;
+        }
+        #right{
+            height: 206px;
+            float: right;
+            width: 30%;
+
+            background-image: url("../img/main-bg.gif");
+            background-repeat: repeat-x;
+            background-size: 206px;
+        }
+        #body{
+            height: 207px;
+            scroll-top: 5px;
+        }
+        #body .c2{
+            float: left;
+        }
+        #body .c1{
+            float: right;
+        }
+        #left .u1{
+            float: left;
+            padding-left: 10px;
+        }
+        #left .l1{
+            line-height: 30px;
+            list-style-image: url("../img/wenzhang-bg.gif");
+        }
+        #left li{
+            margin-top: 5px;
+            line-height: 30px;
+            list-style-type: none;
+        }
+        #left .u2{
+            float: right;
+        }
+        #center img{
+            margin-top: 5px;
+            float: left;
+            width: 33.3%;
+        }
+        #center span{
+            margin-top: 10px;
+            text-align: center;
+            float: left;
+            width: 33.3%;
+        }
+        #right img{
+            margin-top: 20px;
+            float: left;
+        }
+        #right h2{
+            margin-top: 10px;
+            margin-left: 50px;
+        }
+        #right h4{
+            color: red;
+            margin-top: 3px;
+            margin-left: 50px;
+        }
+        #right form{
+            display: inline-block;
+            float: left;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            text-align: right;
+        }
+        #button1{
+            margin-right: 10px;
+        }
+        #button2{
+            color: red;
+            margin-right: 20px;
+        }
+        #a1{
+            color: blueviolet;
+            text-decoration: none;
+        }
+        #footnav{
+            background-image: url("../img/nav-bg.gif");
+            background-repeat: repeat-x;
+            height: 29px;
+        }
+        #footnav ul{
+            padding-top: 5px;
+
+        }
+        .l2{
+            padding-left: 10px;
+            float: left;
+            list-style-type: none;
+            width: 80px;
+            text-align: center;
+            color: white;
+        }
+        #footnav1{
+            height: 114px;
+            padding-top:20px;
+            text-align: center;
+            background-image: url("../img/main-bg.gif");
+            background-repeat: repeat-x;
+            background-size: 206px;
+        }
+        #footnav1 span{
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="head">
+        <div id="nav">
+            <img src="../img/logo.gif">
+            <ul>
+                <li>首页</li>
+                <li>关于惠达</li>
+                <li>惠达新闻</li>
+                <li>卫浴产品</li>
+                <li>瓷砖产品</li>
+                <li>技术创新</li>
+                <li>服务支持</li>
+                <li>工程案例</li>
+            </ul>
+        </div>
+        <div id="img1"><img src="../img/banner.gif"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="body">
+        <div id="left">
+            <h2 class="c2">新闻动态</h2>
+            <h2 class="c1">MORE</h2>
+            <div class="clearfix"></div>
+            <hr/>
+            <ul class="u1">
+                <li class="l1">哈哈哈哈哈</li>
+                <li class="l1">哈哈哈哈哈新闻</li>
+                <li class="l1">哈哈哈哈哈卫浴产品</li>
+                <li class="l1">瓷砖哈哈哈哈哈</li>
+            </ul>
+            <ul class="u2">
+                <li>2010-10-01</li>
+                <li>2010-10-01</li>
+                <li>2010-10-01</li>
+                <li>2010-10-01</li>
+            </ul>
+        </div>
+        <div id="center">
+            <h2 class="c2">产品展示</h2>
+            <h2 class="c1">MORE</h2>
+            <div class="clearfix"></div>
+            <hr/>
+            <img src="../img/tu1.gif"> <img src="../img/tu2.gif"> <img src="../img/tu3.gif">
+            <div class="clearfix"></div>
+            <span>厨卫龙头</span>
+            <span>厨卫水龙</span>
+            <span>浴室龙头</span>
+        </div>
+        <div id="right">
+            <img src="../img/ren.gif">
+            <h2 >总部电话</h2>
+            <h4>020-871561145456</h4>
+            <div class="clearfix"></div>
+            <br>
+            <hr/>
+            <form action="#" method="get">
+                用户名：<input type="text" name="username"><br><br>
+                密码：<input type="password" name="usePwd"><br><br>
+                <button id="button1" name="log">登录</button> <button id="button2" type="submit">注册</button>
+                <a id="a1" href="https://www.taobao.com" target="_blank">忘记密码？</a>
+            </form>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="foot">
+        <div id="footnav">
+            <ul>
+                <li class="l2">关于中网</li>
+                <li class="l2">诚聘英才</li>
+                <li class="l2">广告服务</li>
+                <li class="l2">广告服务</li>
+                <li class="l2">哈哈哈哈</li>
+                <li class="l2">哈哈哈哈</li>
+                <li class="l2">哈哈哈哈</li>
+                <li class="l2">哈哈哈哈</li>
+                <li class="l2">哈哈哈哈</li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div id="footnav1">
+            <span>市场部：0000-000000  客服电话：000-0000  传真：000-000  商务合作：000-000</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

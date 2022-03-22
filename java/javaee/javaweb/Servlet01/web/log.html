@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .box {
+            width: 350px;
+            height: 100px;
+            margin: 0px auto;
+        }
+        #zhanghao{
+            padding-top: 20px;
+        }
+        #mima{
+            padding-top: 20px;
+        }
+        #mima1{
+            padding-top: 20px;
+        }
+        #zhuce{
+            padding-top: 20px;
+            padding-left: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //获取用户名对象
+            var usernameElt = document.getElementById("username");
+            //获取username的span标签
+            var usernameErrorEltSpan = document.getElementById("usernameError");
+            //给用户名绑定blur事件
+            usernameElt.onblur = function () {
+                //获取用户名
+                var username = usernameElt.value;
+                //去除前后空白
+                username = username.trim();
+                if (username.length == 0) {
+                    usernameErrorEltSpan.innerText = "用户名不能为空";
+                } else {
+                    //用户名不为空
+                    //继续判断长度[6-14]
+                    if (username.length < 6 || username.length > 14) {
+                        //用户名长度非法
+                        usernameErrorEltSpan.innerText = "用户名长度不合法，必须在6到14位"
+                    } else {
+                        //长度合法
+                        //继续判断是否含有特殊符号（正则）
+                        //创建正则对象
+                        var regExp = /^[A-Za-z0-9]+$/
+                        var ok = regExp.test(username);
+                        if (ok) {
+                            //用户名最终合法
+                        } else {
+                            //含有特殊符号
+                            usernameErrorEltSpan.innerText = "用户名不能含有特殊符号"
+                        }
+                    }
+                }
+            }
+            //给用户名绑定获得焦点事件
+            usernameElt.onfocus = function () {
+                //清空非法的value
+                if (usernameErrorEltSpan.innerText != "") {
+                    usernameElt.value = "";
+                }
+                //清空span
+                usernameErrorEltSpan.innerText = "";
+            }
+
+            //获取确认密码框对象
+            var pwd2Elt = document.getElementById("pwd2");
+            //获取确认密码的span对象
+            var pwd2ErrorEltSpan = document.getElementById("pwd2Error");
+            //绑定blun事件
+            pwd2Elt.onblur = function () {
+                //获取密码和确认密码
+                var pwdElt = document.getElementById("pwd");
+                var pwd = pwdElt.value;
+                var pwd2 = pwd2Elt.value;
+                if (pwd != pwd2) {
+                    //两次输入的密码不一致
+                    pwd2ErrorEltSpan.innerText = "两次输入的密码不一致";
+                } else {
+                    //密码一致
+
+                }
+            }
+            //给密码和确认密码绑定获得焦点事件，先获取密码框对象
+            var pwdElt = document.getElementById("pwd");
+            pwdElt.onfocus = function () {
+                //清空密码
+                if (pwd2ErrorEltSpan.innerText != "") {
+                    pwdElt.value = "";
+                    pwd2Elt.value = "";
+                }
+                //清空span
+                pwd2ErrorEltSpan.innerText = "";
+            }
+            //获取注册按钮对象
+            var btnElt = document.getElementById("btn");
+            //给注册按钮绑定单击事件
+            btnElt.onclick = function () {
+                //单击时触发username、pwd2和邮箱的focus和blue
+                usernameElt.focus();
+                usernameElt.blur();
+
+                pwd2Elt.focus();
+                pwd2Elt.blur();
+
+                if (usernameErrorEltSpan.innerText == "" && pwd2ErrorEltSpan.innerText == "") {//表单都合法
+                    //提交表单
+                    //先获取表单对象
+                    var userFormElt = document.getElementById("userForm");
+                    userFormElt.submit();//提交
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box"><h1 style="color: red">注册账号</h1></div>
+<div class="box">
+    <form action="/yi/reg" id="userForm">
+        <div id="zhanghao">
+            账号：<input type="text" name="act" id="username"><span id="usernameError" style="color: red"></span>
+        </div>
+        <div id="mima">
+            密码：<input type="password" name="pwd" id="pwd">
+        </div>
+        <div id="mima1">
+            确认密码：<input type="password" id="pwd2"><span id="pwd2Error" style="color: red"></span>
+        </div>
+        <div id="zhuce">
+            <input type="button" value="注册" id="btn"/>
+            <input type="reset" value="重置"/>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <style type="text/css">
+        div[class^=col] {
+            border: 1px crimson solid;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!-- 适用于 pc，container >= 1200px -->
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-1">col-lg-1</div>
+        <div class="col-lg-2">col-lg-2</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-5">haha</div>
+        <div class="col-xs-7">dsadsa</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix visible-xs-block"></div>
+
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6
+            .col-md-offset-0
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+        <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2
+            .col-lg-6 .col-lg-offset-0
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-condensed table-striped table-bordered" style="width: 300px ">
+        <tr>
+            <th>姓名</th>
+            <th>班级</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>四班</td>
+        </tr>
+        <tr>
+            <td>张大</td>
+            <td>大班</td>
+        </tr>
+        <tr>
+            <td>张二</td>
+            <td>二班</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>二班</td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>五班</td>
+        </tr>
+    </table>
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>

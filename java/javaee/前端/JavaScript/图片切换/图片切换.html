@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box{
+            margin: 0 auto;
+            width: 450px;
+        }
+        #img{
+            border: solid;
+            height: 233px;
+            width: 426px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //第一张
+            var fristImg = document.getElementById("frist");
+            fristImg.onclick = function () {
+                var img = document.getElementById("img");
+                img.setAttribute("src","img/cxk1.png")
+            }
+            //上一张
+            var beforeImg = document.getElementById("before");
+            beforeImg.onclick = function () {
+                var img = document.getElementById("img")
+                var src = img.getAttribute("src")
+                //将src中的数字取出来,并转为数字类型
+                var intNum = parseInt(src.substr(7,1));
+                if (intNum > 1){
+                    var nextNum = intNum - 1;
+                    //替换src中的数字
+                    src = src.replace(intNum,nextNum);
+                    //重新设置src属性
+                    img.setAttribute("src",src)
+                }
+            }
+            //下一张
+            var nextImg = document.getElementById("next");
+            nextImg.onclick = function () {
+                var img = document.getElementById("img")
+                var src = img.getAttribute("src")
+                //将src中的数字取出来,并转为数字类型
+                var intNum = parseInt(src.substr(7,1));
+                if (intNum < 9){
+                    var nextNum = intNum + 1;
+                    //替换src中的数字
+                    src = src.replace(intNum,nextNum);
+                    //重新设置src属性
+                    img.setAttribute("src",src)
+                }
+            }
+            //最后一张
+            var lastImg = document.getElementById("lastimg");
+            lastImg.onclick = function () {
+                var img = document.getElementById("img");
+                img.setAttribute("src","img/cxk9.png")
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="imgbox">
+            <img src="img/cxk1.png" id="img">
+        </div>
+        <button id="frist">第一张</button>
+        <button id="before">上一张</button>
+        <button id="next">下一张</button>
+        <button id="lastimg">最后一张</button>
+    </div>
+</body>
+</html>

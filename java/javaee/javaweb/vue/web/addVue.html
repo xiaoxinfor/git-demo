@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="aps">
+        姓名：<input type="text" v-model="user.userName" /><br />
+        年龄：<input type="text" v-model="user.age" /><br />
+        性别：<input type="radio" name="sex" value="男" v-model="user.sex" /> 男
+        <input type="radio" name="sex" value="女" v-model="user.sex" /> 女<br />
+        <input type="button" value="保存" @click="save()" />
+        <br />
+    </div>
+    <script>
+        new Vue({
+            el:"#aps",
+            data(){
+                return{
+                    user:{}
+                }
+            },
+            methods:{
+              save(){
+                  var _this = this;
+                  //发送ajax请求，完成添加
+                  axios({
+                      method:"post",
+                      url:"/add.do",
+                      data:_this.user
+                  }).then(function (resp) {
+                      if (resp.data == "success"){
+                          location.href = "/showVue.html";
+                      }
+                  })
+              }
+            },
+        })
+    </script>
+</body>
+</html>

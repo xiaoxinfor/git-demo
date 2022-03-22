@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javasm.dao.HeroDao">
+    <!-- 查询语句 -->
+    <select id="selectHero" resultType="com.javasm.bean.vo.HeroTypeInfo">
+        select h.*,ht.heroTypeName from heroinfo h,herotypeinfo ht
+        <where>
+            h.heroTypeId = ht.heroTypeId
+            <if test="heroName != null and heroName != '' ">
+                and heroName like "%" #{heroName} "%"
+            </if>
+            <if test="beginDate != null and beginDate !='' and endDate != null and endDate !=''">
+                and h.heroCreateDate between #{beginDate} and #{endDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectHeroType" resultType="com.javasm.bean.HeroType">
+        select * from herotypeinfo
+    </select>
+
+    <insert id="addHero">
+        insert into heroinfo values(null,#{heroName},#{heroTypeId},#{heroImage},#{heroAttack},#{heroHealth},#{heroCreateDate})
+    </insert>
+
+    <update id="updateHero">
+        update heroinfo set heroName=#{heroName},heroTypeId=#{heroTypeId},heroImage=#{heroImage},heroAttack=#{heroAttack},heroHealth=#{heroHealth},heroCreateDate=#{heroCreateDate} where heroId=#{heroId}
+    </update>
+
+    <delete id="deleteHero">
+        delete from heroinfo where heroId=#{heroId}
+    </delete>
+</mapper>

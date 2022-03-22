@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="计算器.css">
+    <script type="text/javascript">
+        var result = "";
+        function getNumber(obj) {
+            var show1Elt = document.getElementById("show1");
+            var show2Elt = document.getElementById("show2");
+            if (obj.value == "+" || obj.value == "-" || obj.value == "*" || obj.value == "/") {
+                var r1;
+                if (show1Elt.value.length > 0){
+                    //先计算前面加减的结果
+                    r1 = eval(result);
+                    var lt = result.length;
+                    //取到result的最后一个字符
+                    var last = result.substr((lt - 1), 1);
+                    if (last == "+" || last == "-" || last == "*" || last == "/") {
+                        result = result;
+                    } else {
+                        r1 += obj.value;
+                        show1Elt.value = r1;
+                        result = r1;
+                    }
+                }
+            } else if (obj.value == "C") {
+                result = "";
+                show1Elt.value = result;
+                show2Elt.value = "";
+            } else if (obj.value == "=") {
+                result = eval(result);
+                show2Elt.value = result;
+                show1Elt.value = "";
+            } else {
+                result += obj.value;
+                show1Elt.value = result;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="father">
+    <h1>HYF专用计算器</h1>
+    <table>
+        <tr height="50px">
+            <td colspan="4">
+                <input type="text" id="show1" readonly="readonly"/>
+                <br/>
+                <input type="text" id="show2" readonly="readonly"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- this:触发事件的标签对象 -->
+                <input type="button" value="1" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="2" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="3" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="+" class="btn" onclick="getNumber(this)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="5" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="6" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="-" class="btn" onclick="getNumber(this)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="8" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="9" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="/" class="btn" onclick="getNumber(this)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="0" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="C" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="=" class="btn" onclick="getNumber(this)"/>
+            </td>
+            <td>
+                <input type="button" value="*" class="btn" onclick="getNumber(this)"/>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

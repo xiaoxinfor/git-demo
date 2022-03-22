@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="addVue.html">添加</a>
+        <table border="1" width="300px" cellspacing="0" align="center">
+            <tr>
+                <td>编号</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>性别</td>
+            </tr>
+            <tr v-for="(user,i) in bands">
+                <td>{{i + 1}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.sex}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        <!--创建vue对象-->
+        new Vue({
+            el:"#app",
+            data(){
+                return{
+                    bands:[]
+                }
+            },
+            mounted(){
+                //页面加载完毕后，发送异步请求，查询数据
+                var _this = this;
+                axios.get("/showAll.do").then(function (response) {
+                    _this.bands = response.data;
+                })
+            }
+        });
+    </script>
+</body>
+</html>

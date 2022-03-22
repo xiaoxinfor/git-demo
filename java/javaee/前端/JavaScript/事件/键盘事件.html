@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript">
+    window.onload = function () {
+        var userElt = document.getElementById("user");
+        userElt.onkeydown = function (ev) {
+            if (ev.keyCode === 13){
+                alert("正在登录")
+            }
+        }
+    }
+</script>
+<body>
+    <input type="text" id="user">
+</body>
+</html>

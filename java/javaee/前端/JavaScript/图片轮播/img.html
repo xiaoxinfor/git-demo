@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+        window.onload = function () {
+            var i = 0;
+            function move() {
+                var imgList = document.getElementById("imgList")
+                imgList.style.left = -1*i + "px";
+                i++;
+                if (i == 4440){
+                    i = 0;
+                }
+            }
+            setInterval(move,2)
+        }
+    </script>
+</head>
+<body>
+<div id="adver">
+    <ul id="imgList">
+        <li><img src="images/adver01.jpg"></li>
+        <li><img src="images/adver02.jpg"></li>
+        <li><img src="images/adver03.jpg"></li>
+        <li><img src="images/adver04.jpg"></li>
+        <li><img src="images/adver05.jpg"></li>
+        <li><img src="images/adver06.jpg"></li>
+    </ul>
+    <div class="arrowLeft"><</div><div class="arrowRight">></div>
+</div>
+</body>
+</html>

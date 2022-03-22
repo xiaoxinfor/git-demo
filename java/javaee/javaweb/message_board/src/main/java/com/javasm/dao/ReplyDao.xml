@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javasm.dao.ReplyDao">
+    <!-- 查询语句 -->
+    <insert id="addReply">
+        insert into reply values (null,#{dId},#{rContent},NOW(),#{uId})
+    </insert>
+
+    <select id="selectSomeReply" resultType="com.javasm.bean.Reply">
+        select uName,rContent,rTime from reply r left join `user` u
+        on r.uId=u.uId
+        where dId = #{dId}
+    </select>
+</mapper>

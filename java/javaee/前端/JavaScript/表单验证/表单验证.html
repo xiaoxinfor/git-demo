@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //获取账号对象
+            var actElt = document.getElementById("act");
+            //获取账号的span
+            var actspanElt = document.getElementById("actspan")
+            //给账号绑定失去焦点事件
+            actElt.onblur = function () {
+                if (actElt.value.length == 0) {
+                    actspanElt.innerText = "账号不能为空"
+                }else {
+
+                }
+            }
+            //给账号绑定获得焦点事件
+            actElt.onfocus = function () {
+                if (actspanElt.innerText != ""){
+                    actElt.value = "";
+                    actspanElt.innerText ="";
+                }
+            }
+
+            //获取密码对象
+            var pwdElt = document.getElementById("pwd");
+            var pwdspanElt = document.getElementById("pwdspan");
+            //给密码绑定失去焦点事件
+            pwdElt.onblur = function () {
+                if (pwdElt.value.length == 0){
+                    pwdspanElt.innerText = "密码不能为空";
+                } else {
+
+                }
+            }
+            //给密码绑定获得焦点事件
+            pwdElt.onfocus = function () {
+                if (pwdspanElt.innerText != ""){
+                    pwdElt.value = "";
+                    pwdspanElt.innerText = "";
+                }
+            }
+            //获取按钮对象
+            var btnElt = document.getElementById("btn");
+            btnElt.onclick = function () {
+                actElt.focus();
+                actElt.blur();
+
+                pwdElt.focus();
+                pwdElt.blur();
+
+                if (actspanElt.innerText == "" && pwdspanElt.innerText == ""){
+                    //提交表单
+                    //获取表单对象
+                    var user = document.getElementById("user");
+                    user.submit();
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="user" action="https://www.taobao.com" method="get">
+        账号：<input type="text" id="act"><span id="actspan"></span><br>
+        密码：<input type="password" id="pwd"><span id="pwdspan"></span><br>
+        <button type="button" id="btn">登录</button>
+    </form>
+</body>
+</html>

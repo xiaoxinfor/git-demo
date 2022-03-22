@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#adver{
+    width: 730px;
+    height: 454px;
+    margin: 10px auto;
+    position: relative;
+    background-color: yellow;
+    padding: 10px;
+    /*裁剪溢出内容*/
+    overflow: hidden;
+}
+#imgList{
+    list-style-type: none;
+    width: 4440px;
+    /*开启绝对定位*/
+    position: absolute;
+    /*设置偏移量*/
+    left: 0px;
+}
+#imgList li{
+    float: left;
+    padding-left: 10px;
+}

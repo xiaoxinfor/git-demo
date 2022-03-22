@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<form action="0.入门.html">
+    <input type="text" id="username" onblur="yan()"/><span id="userspan"></span>
+</form>
+<script type="text/javascript">
+
+    var userName = document.getElementById("username");
+    userName.setAttribute("value","");
+    var userValue = userName.getAttribute("value")
+    function yan() {
+        if (userValue.length < 3 || userValue.length >6){
+            var span = document.getElementById("userspan");
+            span.innerText = "长度不合法";
+        }else {
+
+        }
+    }
+</script>
+</body>
+</html>

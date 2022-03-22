@@ -1,0 +1,42 @@
+input[type='text'] {
+    height: 35px;
+    width: 264px;
+    text-align: right;
+    font-size: 19px;
+
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.btn1 {
+    width: 129px;
+    height: 60px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#father {
+    width: 272px;
+    background-color: bisque;
+    padding: 15px;
+    padding-top: 15px;
+    border: 20px cadetblue inset;
+    margin-top: 50px;
+    margin-left: 850px;
+}
+
+table {
+    margin-top: 25px;
+}
+
+h1 {
+    font-family: '楷体';
+    font-weight: 900;
+    color: cadetblue;
+    text-align: center;
+}
